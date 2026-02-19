@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite - Lucas & Quesia</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f3d2e, #1f6f54);
+    color: white;
+    text-align: center;
+}
+.container {
+    padding: 40px 20px;
+}
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+h2 {
+    font-weight: normal;
+    margin-top: 0;
+}
+.card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    backdrop-filter: blur(10px);
+}
+.button {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.countdown {
+    font-size: 22px;
+    margin-top: 20px;
+}
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Lucas & Quesia</h1>
+    <h2>Nosso Casamento Civil</h2>
+
+    <div class="card">
+        <p>Com alegria em nossos corações, convidamos você para celebrar conosco um dos dias mais importantes de nossas vidas.</p>
+
+        <p><strong>Data:</strong> 30 de Maio de 2025<br>
+        <strong>Horário:</strong> 11:00</p>
+
+        <p><strong>Local:</strong><br>
+        Rua Líbero Badaró, 1604<br>
+        Franca - SP</p>
+
+        <p>Após a cerimônia civil, teremos uma comemoração especial em uma churrascaria.<br>
+        (Em breve mais detalhes)</p>
+
+        <a class="button" href="https://wa.me/5516993233044" target="_blank">
+            Confirmar Presença no WhatsApp
+        </a>
+
+        <div id="countdown" class="countdown"></div>
+    </div>
+
+    <div class="footer">
+        Com carinho ❤️ Lucas & Quesia
+    </div>
+</div>
+
+<audio autoplay loop controls>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<script>
+var countDownDate = new Date("May 30, 2025 11:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  "Faltam " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Chegou o grande dia!";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
